@@ -1,0 +1,4 @@
+.application.json
+node_modules/
+.npm
+cdk.out

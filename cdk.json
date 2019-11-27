@@ -1,0 +1,4 @@
+{
+  "app": "node cdkInit/create-s3-bucket.js",
+  "requireApproval": "never"
+}

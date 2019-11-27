@@ -1,0 +1,20 @@
+{
+  "name": "cdk_in_lambda",
+  "version": "0.1.0",
+  "scripts": {
+    "setup": "npm install",
+    "list": "./node_modules/aws-cdk/bin/cdk list",
+    "cdk": "./node_modules/aws-cdk/bin/cdk",
+    "deploy": "./node_modules/aws-cdk/bin/cdk deploy",
+    "synth": "./node_modules/aws-cdk/bin/cdk synth --output synth",
+    "destroy": "./node_modules/aws-cdk/bin/cdk destroy"
+  },
+  "devDependencies": {
+    "aws-cdk": "^1.18.0"
+  },
+  "dependencies": {
+    "@aws-cdk/core": "^1.18.0",
+    "@aws-cdk/aws-s3": "^1.18.0",
+    "source-map-support": "^0.5.16"
+  }
+}
