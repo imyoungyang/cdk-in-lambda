@@ -12,7 +12,7 @@ async function deployCDK() {
   const aid = callerIdentity.Account;
 
   // 1. lambda execute path at /var/task but does not allow to create. Only /tmp can use.
-  // 2. Without aws config file, CDK will through exceptions
+  // 2. Without aws config file, CDK will raise exceptions
   // https://github.com/aws/aws-cdk/blob/master/packages/aws-cdk/lib/api/util/sdk.ts#L325
 
   // setup aws config file.
