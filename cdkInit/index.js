@@ -12,8 +12,8 @@ async function deployCDK() {
   const aid = callerIdentity.Account;
 
   // 1. lambda execute path at /var/task but does not allow to create. Only /tmp can use.
-  // 2. Without aws config file, CDK will crash
-  // https://github.com/awslabs/aws-cdk/blob/master/packages/aws-cdk/lib/api/util/sdk.ts#L245
+  // 2. Without aws config file, CDK will through exceptions
+  // https://github.com/aws/aws-cdk/blob/master/packages/aws-cdk/lib/api/util/sdk.ts#L325
 
   // setup aws config file.
   if (!fs.pathExistsSync(path.resolve('/tmp', '.aws', 'config'))) {
@@ -35,10 +35,10 @@ async function deployCDK() {
     fs.outputFileSync(path.resolve('/tmp', 'credentials'), data);
   }
   
-  // 1. Overwrite the process.env.HOME Lambda default HOME is /home/usrXXX.
-  // https://github.com/awslabs/aws-cdk/blob/master/packages/aws-cdk/lib/api/util/sdk.ts#L417
-  // 2. Overwrite the default credetial file. Without that, CDK will try to mkdir in os.homedir().
-  // https://github.com/awslabs/aws-cdk/blob/master/packages/aws-cdk/lib/api/util/sdk.ts#L297
+  // 1. Set process.env.HOME Lambda default HOME is /home/usrXXX.
+  // 2. Create a shared credetial file to let CDK deploy environment-agnostic.
+  // https://docs.aws.amazon.com/cli/latest/topic/config-vars.html#the-shared-credentials-file
+  // https://github.com/aws/aws-cdk/blob/master/packages/aws-cdk/lib/api/util/sdk.ts#L297
   var cmd = `
   export AWS_SHARED_CREDENTIALS_FILE='/tmp/credentials'
   export HOME='/tmp'
