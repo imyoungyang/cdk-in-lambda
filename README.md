@@ -63,3 +63,28 @@ s3Stack
 ```
 
 * run SAM in local, it will trigger deploy.
+
+```
+sam local invoke cdkInit --no-event
+```
+
+  If encounter error, check your ~/.aws/creditial. Most of cases are related to your IAM access rights.
+
+* You can deploy the code to AWS lambda environment
+
+## Run in AWS Lambda environment
+
+* Please give lambda execution role with policies: `AWSCloudFormation*` and `AmazonS3*`
+
+* The key points are at lambda [index.js](./cdkInit/index.js)
+
+* create aws config at `/tmp/.aws/config`, creditials at `/tmp/credentials`. 
+* change the lambda execution environment variables:
+
+```
+  export AWS_SHARED_CREDENTIALS_FILE='/tmp/credentials'
+  export HOME='/tmp'
+```
+
+* The credentials must get from STS. Otherwise, you will get secret error messages.
+
