@@ -2,7 +2,25 @@
 
 ## File and Folder Structure
 
-### Package.json
+### cdk.json
+
+must add auto complete for deployment.
+
+```
+{
+  "app": "node cdkInit/create-s3-bucket.js",
+  "requireApproval": "never"
+}
+```
+
+* Need to change cdk output path because lambda environment only allow to write in tmp.
+
+```
+Error: EROFS: read-only file system, open 'cdk.out/tree.json'
+@aws-cdk/core/lib/private/tree-metadata.js:50:12)
+```
+
+### package.json
 
 * define the run scripts for CDK execution.
 ```
@@ -29,6 +47,8 @@
 ```
 
 ## Testing in local
+
+Remember to set the lambda timeout to 900 seconds.
 
 * `npm install`
 * `npm run list`

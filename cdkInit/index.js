@@ -4,7 +4,6 @@ const path = require('path');
 const fs = require('fs-extra');
 
 var default_region = process.env.AWS_REGION || 'us-east-1';
-console.log(default_region);
 
 async function deployCDK() {
 

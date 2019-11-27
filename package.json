@@ -13,8 +13,8 @@
     "aws-cdk": "^1.18.0"
   },
   "dependencies": {
-    "@aws-cdk/core": "^1.18.0",
     "@aws-cdk/aws-s3": "^1.18.0",
+    "@aws-cdk/core": "^1.18.0",
     "source-map-support": "^0.5.16"
   }
 }

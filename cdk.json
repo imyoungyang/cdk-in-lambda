@@ -1,4 +1,5 @@
 {
   "app": "node cdkInit/create-s3-bucket.js",
+  "output": "/tmp/cdk.out",
   "requireApproval": "never"
 }

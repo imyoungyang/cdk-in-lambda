@@ -9,6 +9,6 @@ Resources:
       Runtime: nodejs8.10
       Description: ''
       MemorySize: 128
-      Timeout: 15
+      Timeout: 900
       Role:
         'Fn::Sub': 'arn:aws:iam::${AWS::AccountId}:role/lambda_basic_execute_role'
