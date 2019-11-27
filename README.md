@@ -4,11 +4,12 @@
 
 ### cdk.json
 
-must add auto complete for deployment.
+must add auto complete for deployment. And change the cdk output meta data path.
 
 ```
 {
   "app": "node cdkInit/create-s3-bucket.js",
+  "output": "/tmp/cdk.out",
   "requireApproval": "never"
 }
 ```
