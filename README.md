@@ -61,3 +61,5 @@ npm run list
 
 s3Stack
 ```
+
+* run SAM in local, it will trigger deploy.
