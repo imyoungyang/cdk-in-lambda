@@ -10,7 +10,7 @@
     "destroy": "./node_modules/aws-cdk/bin/cdk destroy"
   },
   "devDependencies": {
-    "aws-cdk": "^1.18.0"
+    "aws-cdk": "^1.174.0"
   },
   "dependencies": {
     "@aws-cdk/aws-s3": "^1.18.0",
